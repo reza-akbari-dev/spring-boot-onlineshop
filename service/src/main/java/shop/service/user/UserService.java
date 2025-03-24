@@ -3,7 +3,7 @@ package shop.service.user;
 
 import lombok.SneakyThrows;
 import shop.common.exceptions.*;
-import shop.common.exceptions.ValidationException;
+
 import shop.common.utils.HashUtil;
 import shop.dataaccess.entity.user.User;
 import shop.dataaccess.repository.user.PermissionRepository;
@@ -49,13 +49,13 @@ public class UserService {
         result.setToken(jwtUtil.generateToken(result.getUsername()));
         return result;
     }
-
+@SneakyThrows
     public UserDto getUserByUsername(String username) throws NotFoundException {
         User user = userRepository.findFirstByUsername(username)
                 .orElseThrow(NotFoundException::new);
         return mapper.map(user, UserDto.class);
     }
-
+    @SneakyThrows
     public UserDto getById(Long id) throws NotFoundException {
         User user = userRepository.findById(id)
                 .orElseThrow(NotFoundException::new);

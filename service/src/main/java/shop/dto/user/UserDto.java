@@ -20,6 +20,10 @@ public class UserDto {
     private String email;
     private LocalDateTime registerDate;
     private Boolean enable = true;
+
+    public Set<RoleDto> getRoles() {
+        return roles;
+    }
+
     private Set<RoleDto> roles;
 }
-
