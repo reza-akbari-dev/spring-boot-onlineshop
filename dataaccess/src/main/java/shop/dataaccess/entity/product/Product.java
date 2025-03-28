@@ -24,7 +24,7 @@ public class Product {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    private Boolean enabled= true;
+    private Boolean enable= true;
     private Boolean exist= true;
     private Long price;
     private Long visitCount;
@@ -45,5 +45,8 @@ public class Product {
     joinColumns = @JoinColumn(name = "product_id"),
     inverseJoinColumns = @JoinColumn(name = "color_id"))
     private Set<Color>colors;
+
+    @ManyToOne
+    private ProductCategory category;
 
 }

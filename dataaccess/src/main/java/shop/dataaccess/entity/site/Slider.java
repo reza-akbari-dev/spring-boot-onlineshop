@@ -15,16 +15,16 @@ public class Slider {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 500)
+    @Column(length = 500, nullable = false)
     private String title;
 
-    @Column(nullable = false, length = 1000)
+    @Column(length = 1000, nullable = false)
     private String link;
 
-    private Boolean enable;
+    private Boolean enable = true;
     private Integer orderNumber;
 
     @ManyToOne
-    @JoinColumn (nullable = false)
+    @JoinColumn(nullable = false)
     private File image;
 }

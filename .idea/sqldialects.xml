@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/doc/src/main/java/queries/02-file.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/doc/src/main/java/queries/03_slider.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/doc/src/main/java/queries/04_pcat.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/doc/src/main/java/queries/05_product.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/doc/src/main/java/queries/06_color.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/doc/src/main/java/queries/07_size.sql" dialect="MySQL" />
+  </component>
+</project>

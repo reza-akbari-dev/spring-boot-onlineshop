@@ -1,10 +1,10 @@
-package net.holosen.app.controller.open;
+package shop.app.controller.open;
 
-import net.holosen.app.model.APIResponse;
-import net.holosen.app.model.enums.APIStatus;
-import net.holosen.dto.user.LimitedUserDto;
-import net.holosen.dto.user.LoginDto;
-import net.holosen.service.user.UserService;
+import shop.app.model.APIResponse;
+import shop.app.model.enums.APIStatus;
+import shop.dto.user.LimitedUserDto;
+import shop.dto.user.LoginDto;
+import shop.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

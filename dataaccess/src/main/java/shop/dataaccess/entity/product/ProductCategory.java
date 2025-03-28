@@ -21,9 +21,9 @@ public class ProductCategory {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    private Boolean enabled;
+    private Boolean enable;
 
     @ManyToOne
-    @JoinColumn (nullable = false)
+    @JoinColumn(nullable = false)
     private File image;
 }
