@@ -3,6 +3,7 @@ package shop.service.product;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import shop.common.exceptions.NotFoundException;
 import shop.dataaccess.entity.product.Product;
 import shop.dataaccess.repository.product.ColorRepository;
 import shop.dataaccess.repository.product.ProductCategoryRepository;
@@ -46,7 +47,7 @@ public class ProductService {
         List<Product> result = new ArrayList<>();
         switch (type) {
             case Popular -> {
-                result=repository.find6PopularProducts();
+                result = repository.find6PopularProducts();
             }
             case Newest -> {
                 result = repository.find6NewestProducts();
@@ -60,4 +61,10 @@ public class ProductService {
         }
         return result.stream().map(x -> mapper.map(x, ProductDto.class)).toList();
     }
+
+    public ProductDto read(Long id) throws NotFoundException {
+        Product product = repository.findById(id).orElseThrow(NotFoundException::new);
+        return mapper.map(product, ProductDto.class);
+    }
+
 }

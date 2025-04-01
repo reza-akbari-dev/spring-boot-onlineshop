@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import shop.app.model.APIResponse;
 import shop.app.model.enums.APIStatus;
+import shop.common.exceptions.NotFoundException;
 import shop.dto.product.ProductCategoryDto;
 import shop.dto.product.ProductDto;
 import shop.enums.ProductQueryType;
@@ -38,5 +39,19 @@ public class ProductController {
                 .status(APIStatus.Success)
                 .data(service.read6TopProducts(type))
                 .build();
+    }
+@GetMapping("{id}")
+    public APIResponse <ProductDto> getById(@PathVariable Long id) {
+        try {
+            return APIResponse.<ProductDto>builder()
+                    .status(APIStatus.Success)
+                    .data(service.read(id))
+                    .build();
+        } catch (NotFoundException e) {
+            return APIResponse.<ProductDto>builder()
+                    .status(APIStatus.Error)
+                    .message(e.getMessage())
+                    .build();
+        }
     }
 }

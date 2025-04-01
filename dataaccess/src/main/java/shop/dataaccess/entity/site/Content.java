@@ -19,5 +19,5 @@ public class Content {
     private String keyName;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String value;
+    private String valueContent;
 }
